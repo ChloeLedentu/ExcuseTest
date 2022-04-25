@@ -1,0 +1,24 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "nodejs express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "test-devExcuse"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "rest",
+    "api"
+  ],
+  "author": "chloe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

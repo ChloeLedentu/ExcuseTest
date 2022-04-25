@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-8 m-5">
+    <h2 class="title">Les excuses de dev</h2>
+    <div class="card card-plain mt-3">
+      <div class="card-body">
+        <div *ngIf="showElement">
+          <h3 class="card-title">
+            {{excuse[0].tag}}
+          </h3>
+          <h5 class="card-description">
+            {{excuse[0].message}}
+          </h5>
+        </div>
+        <app-show-excuse-child [excuse]="excuse[0]" (loader)=loader($event)></app-show-excuse-child>
+      </div>
+    </div>
+  </div>
+</div>

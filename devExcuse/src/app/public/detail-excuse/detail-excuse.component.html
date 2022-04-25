@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-8 m-5">
+    <h2 class="title">Excuse code : {{excuse.code}}</h2>
+    <div class="card card-plain mt-3">
+      <div class="card-body">
+          <h3 class="card-title">
+            {{excuse.tag}}
+          </h3>
+          <h5 class="card-description">
+            {{excuse.message}}
+          </h5>
+      </div>
+      <div *ngIf="MsgError"><p class="text-danger">{{MsgError}}</p></div>
+    </div>
+  </div>
+</div>

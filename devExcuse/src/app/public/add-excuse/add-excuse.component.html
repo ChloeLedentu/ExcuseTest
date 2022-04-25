@@ -1,0 +1,40 @@
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AddExcuseModal">
+  Ajouter une excuse
+</button>
+
+<!-- MODAL -->
+<div class="modal fade" id="AddExcuseModal" tabindex="-1" aria-labelledby="AddExcuseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" aria-labelledby="AddExcuseModalLabel">Ajouter une excuse</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="form" name="form" (ngSubmit)="onSave()" [formGroup]="excuseForm">
+          <div class="form-group">
+            <label for="code" class="col-form-label">Code :</label>
+            <input type="number" class="form-control" formControlName="code" />
+            <div class="text-danger" *ngIf="excuseForm.get('code')!.invalid ">Le code est invalide.</div>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Tag :</label>
+            <input type="text" class="form-control" formControlName="tag" />
+            <div class="text-danger" *ngIf="excuseForm.get('tag')!.invalid && excuseForm.get('tag')!.dirty">Le tag est
+              invalide.</div>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Message :</label>
+            <textarea type="text" class="form-control" formControlName="message"></textarea>
+            <div class="text-danger" *ngIf="excuseForm.get('message')!.invalid && excuseForm.get('message')!.dirty">Le
+              message est invalide.</div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" [disabled]="excuseForm.invalid">Enregistrer</button>
+            <div class="alert alert-warning" *ngIf="Msgerror">Enregistrement échoué : {{Msgerror}}</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
